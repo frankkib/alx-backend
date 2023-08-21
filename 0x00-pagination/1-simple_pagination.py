@@ -31,8 +31,7 @@ class Server:
     def get_page(self, page: int = 1, page_size: int = 10) -> List[List]:
         """returns the dataset of the page"""
         assert isinstance(page, int) and page > 0, "Invalid page argument"
-        assert isinstance(page_size, int) and page_size > 0,
-        "Invalid page_size argument"
+        assert isinstance(page_size, int) and page_size > 0
         dataset = self.dataset()
         start_index, end_index = index_range(page, page_size)
         if start_index >= len(dataset):
