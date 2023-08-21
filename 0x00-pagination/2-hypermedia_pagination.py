@@ -38,7 +38,7 @@ class Server:
         if start_index >= len(dataset):
             return []
         return dataset[start_index:end_index+1]
-    
+
     def get_hyper(self, page: int = 1, page_size: int = 10) -> dict:
         """function that returns a dictionary of popular baby names"""
         total_pages = math.ceil(len(self.dataset()) / page_size)
@@ -47,7 +47,7 @@ class Server:
                 'page_size': len(self.get_page(page, page_size)),
                 'page': page,
                 'data': self.get_page(page, page_size),
-                'next_page': page + 1 if page  < total_pages else None,
+                'next_page': page + 1 if page < total_pages else None,
                 'prev_page': page - 1 if page > 1 else None,
                 'total_pages': total_pages
                 }
