@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% trans "Welcome to Holberton" %}</title>
+</head>
+<body>
+    <h1>{% trans "Hello world!" %}</h1>
+    <p>
+        {% if g.user %}
+            {% trans "You are logged in as %(username)s." username=g.user['name'] %}
+        {% else %}
+            {% trans "You are not logged in." %}
+        {% endif %}
+    </p>
+</body>
+</html>
+
