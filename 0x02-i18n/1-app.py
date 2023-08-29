@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Basic Flask app with a single route
+Basic Flask app with babel localization support
 """
 from flask import Flask, render_template
 from flask_babel import Babel
@@ -11,7 +11,7 @@ babel = Babel(app)
 
 class Config:
     """
-    class cinfig attributes
+    class config  attributes
     """
     LANGUAGES = ["en", "fr"]
     BABEL_DEFAULT_LOCALE = 'en'
@@ -28,4 +28,4 @@ def index():
 
 
 if __name__ == '__main__':
-    app.run()
+    app.run(debug=True)
