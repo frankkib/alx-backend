@@ -2,7 +2,7 @@
 """
 Basic Flask app with babel localization support
 """
-from flask import Flask, render_template
+from flask import Flask, render_template, request
 from flask_babel import Babel
 
 app = Flask(__name__)
@@ -19,6 +19,11 @@ class Config:
 
 
 @app.config.from_objects(Config)
+def get_locale():
+    """
+    Determining the users preferred language
+    """
+    return request.accept_languages.best_match(app.config['LANGUAGES'])
 @app.route('/')
 def index():
     """"
