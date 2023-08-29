@@ -18,7 +18,9 @@ class Config:
     BABEL_DEFAULT_TIMEZONE = 'UTC'
 
 
-@app.config.from_objects(Config)
+app.config.from_object(Config)
+
+@babel.localeselector
 def get_locale():
     """
     Determining the users preferred language
@@ -27,7 +29,7 @@ def get_locale():
 @app.route('/')
 def index():
     """"
-    Renders the 0-index.html
+    Renders the 1-index.html
     """
     return render_template('1-index.html')
 
